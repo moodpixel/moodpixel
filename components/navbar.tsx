@@ -27,15 +27,15 @@ function Navbar() {
             <DialogTrigger>
               <HelpCircle className="h-6 w-6 hover:text-gray-500 hover:cursor-pointer" />
             </DialogTrigger>
-            <DialogContent className="w-4/5">
+            <DialogContent className="w-4/5 bg-primary rounded-sm">
               <DialogHeader>
                 <DialogTitle>
-                  <h2 className="text-xl font-semibold mb-4">
+                  <h2 className="font-semibold mb-4 text-start text-foreground">
                     Welcome to Mood Pixel
                   </h2>
                 </DialogTitle>
                 <DialogDescription>
-                  <div className="text-gray-700 space-y-4">
+                  <div className="text-foreground space-y-4 text-start">
                     <p>
                       Mood Pixel is your personal mood-tracking companion,
                       designed to help you understand and improve your mental

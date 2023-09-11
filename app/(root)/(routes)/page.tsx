@@ -1,9 +1,13 @@
+"use client";
 import Image from "next/image";
 
 export default function Home() {
+  const date = new Date();
+  const year = date.getFullYear();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-[#EBEDF0]">
-      Page
+    <main className="flex min-h-screen flex-col items-center justify-between p-20 bg-[#EBEDF0]">
+      <div className="text-3xl font-black">{year}</div>
     </main>
   );
 }
