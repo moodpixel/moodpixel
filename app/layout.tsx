@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`bg-secondary/90 min-h-screen ${inter.className}`}>
           <SignedIn>
             <Navbar />
           </SignedIn>
