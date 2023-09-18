@@ -1,4 +1,5 @@
 "use client";
+import Moodgraph from "@/components/moodgraph";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,7 +8,10 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-20 bg-[#EBEDF0]">
-      <div className="text-3xl font-black">{year}</div>
+      <div className="text-3xl font-black">
+        {year}
+        <Moodgraph />
+      </div>
     </main>
   );
 }
