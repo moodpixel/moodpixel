@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardHeader } from "./ui/card";
 import {
   Tooltip,
@@ -6,133 +8,28 @@ import {
   TooltipTrigger,
 } from "./ui/tooltip";
 
-const dailyMoods = [
-  {
-    date: 1,
-    mood: 2,
-  },
-  {
-    date: 2,
-    mood: 1,
-  },
-  {
-    date: 3,
-    mood: 0,
-  },
-  {
-    date: 4,
-    mood: 3,
-  },
-  {
-    date: 5,
-    mood: 4,
-  },
-  {
-    date: 6,
-    mood: 2,
-  },
-  {
-    date: 7,
-    mood: 1,
-  },
-  {
-    date: 8,
-    mood: 0,
-  },
-  {
-    date: 9,
-    mood: 3,
-  },
-  {
-    date: 10,
-    mood: 4,
-  },
-  {
-    date: 11,
-    mood: 2,
-  },
-  {
-    date: 12,
-    mood: 0,
-  },
-  {
-    date: 13,
-    mood: 0,
-  },
-  {
-    date: 14,
-    mood: 3,
-  },
-  {
-    date: 15,
-    mood: 4,
-  },
-  {
-    date: 16,
-    mood: 0,
-  },
-  {
-    date: 17,
-    mood: 1,
-  },
-  {
-    date: 18,
-    mood: 0,
-  },
-  {
-    date: 19,
-    mood: 3,
-  },
-  {
-    date: 20,
-    mood: 4,
-  },
-  {
-    date: 21,
-    mood: 2,
-  },
-  {
-    date: 22,
-    mood: 1,
-  },
-  {
-    date: 23,
-    mood: 0,
-  },
-  {
-    date: 24,
-    mood: 3,
-  },
-  {
-    date: 25,
-    mood: 4,
-  },
-  {
-    date: 26,
-    mood: 2,
-  },
-  {
-    date: 27,
-    mood: 1,
-  },
-  {
-    date: 28,
-    mood: 0,
-  },
-  {
-    date: 29,
-    mood: 3,
-  },
-  {
-    date: 30,
-    mood: 4,
-  },
-];
+import { useEffect, useState } from "react";
 
 const moodColors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"];
 const moodText = ["Awful", "Bad", "Neutral", "Good", "Great"];
 
 function Moodgraph() {
+  const [dailyMoods, setDailyMoods] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const url = "/api";
+        const res = await fetch(url);
+        const data = await res.json();
+        setDailyMoods(data.dailyMoods);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  });
+
   return (
     <Card className="bg-white max-w-xs">
       <CardHeader className="items-center text-2xl font-bold">

@@ -1,4 +1,3 @@
-"use client";
 import Moodgraph from "@/components/moodgraph";
 import Image from "next/image";
 
