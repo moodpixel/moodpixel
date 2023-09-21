@@ -10,12 +10,16 @@ import {
 
 import { useEffect, useState } from "react";
 
+type DailyMood = {
+  date: string;
+  mood: number;
+};
+
 const moodColors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"];
 const moodText = ["Awful", "Bad", "Neutral", "Good", "Great"];
 
 function Moodgraph() {
-  const [dailyMoods, setDailyMoods] = useState([]);
-
+  const [dailyMoods, setDailyMoods] = useState<DailyMood[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
