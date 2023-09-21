@@ -32,6 +32,7 @@ function Moodgraph() {
       }
     };
     fetchData();
+    console.log(fetchData());
   });
 
   return (
